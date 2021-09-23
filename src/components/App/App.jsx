@@ -7,6 +7,10 @@ function App() {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    fetchPizzaList();
+  },[]);
+
   // GET pizza list from server
   const fetchPizzaList = () => {
     axios({
