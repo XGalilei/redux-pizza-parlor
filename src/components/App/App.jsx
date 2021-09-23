@@ -6,6 +6,20 @@ import { useDispatch } from 'react-redux';
 function App() {
 
   const dispatch = useDispatch();
+
+  // GET pizza list from server
+  const fetchPizzaList = () => {
+    axios({
+      method: 'GET',
+      url: '/api/pizza',
+    }).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: 'SET_PIZZA_LIST',
+        payload: response.data
+      });
+    })
+  }
   
   return (
     <div className='App'>
