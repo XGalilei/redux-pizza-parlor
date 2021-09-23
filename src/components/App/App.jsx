@@ -8,10 +8,10 @@ function App() {
   const getCheckout = () => {
     axios({
       method: 'GET',
-      url: '/???',
+      url: '/api/pizza',
     }).then((response) => {
       dispatch({
-        type: 'SET_ORDER',
+        type: 'SET_CHECKOUT',
         payload: response.data,
       }).catch((err) => {
         console.log(err);
