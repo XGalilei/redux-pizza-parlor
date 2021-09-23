@@ -5,7 +5,32 @@ import './App.css';
 function App() {
 
   // Order checkout
-  
+  const getCheckout = () => {
+    axios({
+      method: 'GET',
+      url: '/???',
+    }).then((response) => {
+      dispatch({
+        type: 'SET_ORDER',
+        payload: response.data,
+      }).catch((err) => {
+        console.log(err);
+        alert('Something went wrong.');
+      })
+    })
+  }
+
+  const postCheckout = () => {
+    axios({
+      method: 'POST',
+      url: '/api/order',
+    }).then(response => {
+      console.log(response.data);
+      dispatch({
+        type: 'CHECKOUT',
+      });
+    })
+  }
 
   // Order Enter Customer Info
 
