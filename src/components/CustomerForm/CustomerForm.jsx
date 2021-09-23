@@ -5,14 +5,18 @@ function CustomerForm() {
     //will need to retrieve the customer's order first
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
-    const []
+    const [city, setCity] = useState('');
+    const [zip, setZip] = useState('');
 
-    const handleNext = () => {
+    const handleNext = (event) => {
+        event.preventDefault();
+        //done to prevent code from running automatically
 
+        // TO-DO: Add-in code to handle next step
     }
 
     return <div>
-        <form>
+        <form onSubmit={handleNext}>
             <input 
             onChange={(event) => setName(event.target.value)}
             value={name}
@@ -24,10 +28,13 @@ function CustomerForm() {
             required 
             placeholder="Street Adresss" />
             <input 
-            onChange={}
+            onChange={(event) => setCity(event.target.value)}
+            value={city}
             required
             placeholder="City"/>
             <input 
+            onChange={(event) => setZip(event.target.value)}
+            value={zip}
             required
             placeholder="Zip"/>
 
