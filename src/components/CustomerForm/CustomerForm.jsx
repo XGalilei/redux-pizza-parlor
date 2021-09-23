@@ -7,6 +7,7 @@ function CustomerForm() {
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
+    //const [type, setType] = useState('');
 
     const handleNext = (event) => {
         event.preventDefault();
@@ -14,6 +15,15 @@ function CustomerForm() {
 
         // TO-DO: Add-in code to handle next step
         // will need to add to the existing order object, 
+        console.log({
+            name: name,
+            address: address,
+            city: city,
+            zip: zip,
+            type: 'delivery'
+            //type: type 
+            // (still unsure how to set this up)
+        });
     }
 
     return <div>
@@ -41,11 +51,14 @@ function CustomerForm() {
             placeholder="Zip"/> <br/>
             </div>
 
-            <input type="checkbox"/>Pickup
-            <input type="checkbox"/>Delivery
-            
+            <div>
+            <input type="radio" id="pickup" name= "type" value="pickup"/>
+            <label htmlFor="pickup">Pickup</label>
+            <input type="radio" id="delivery" name="type" value="delivery"/>
+            <label htmlFor="delivery">Delivery</label>
+            </div>
 
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Next"/>
         </form>
     </div>;
 }
