@@ -4,6 +4,21 @@ import './App.css';
 
 function App() {
 
+  // Order checkout
+
+
+  // Order Enter Customer Info
+
+
+  // Order Select Pizza
+
+  
+  // Order Admin
+
+
+  // Order Display all pizzas
+
+
   return (
     <div className='App'>
       <header className='App-header'>
