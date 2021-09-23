@@ -13,33 +13,37 @@ function CustomerForm() {
         //done to prevent code from running automatically
 
         // TO-DO: Add-in code to handle next step
+        // will need to add to the existing order object, 
     }
 
     return <div>
         <form onSubmit={handleNext}>
+            <div>
             <input 
             onChange={(event) => setName(event.target.value)}
             value={name}
             required
-            placeholder="Name" />
+            placeholder="Name" /> <br/>
             <input
             onChange={(event) => setAddress(event.target.value)}
             value={address}
             required 
-            placeholder="Street Adresss" />
+            placeholder="Street Adresss" /> <br/>
             <input 
             onChange={(event) => setCity(event.target.value)}
             value={city}
             required
-            placeholder="City"/>
+            placeholder="City"/> <br/>
             <input 
             onChange={(event) => setZip(event.target.value)}
             value={zip}
             required
-            placeholder="Zip"/>
+            placeholder="Zip"/> <br/>
+            </div>
 
-            <button type="button">Pickup</button>
-            <button type="button">Delivery</button>
+            <input type="checkbox"/>Pickup
+            <input type="checkbox"/>Delivery
+            
 
             <input type="submit" value="Submit"/>
         </form>
