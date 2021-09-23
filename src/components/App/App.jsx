@@ -10,7 +10,7 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <p>Step 1: Select Your Pizza</p>
-      <div>
+      <div className="pizza-card">
         <img className="pizza-image"></img>
         <div className="pizza-description"></div>
         <button>Add</button>
