@@ -7,6 +7,13 @@ import App from './components/App/App';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
+// Array of pizzas
+const pizzaReducer = (state = []], action) => {
+    if (action.type === 'SET_PIZZA_LIST' ){
+        return [...state, action.payload];
+    }
+    return state;
+}
 
 
 // Plop in the reducers you want shared through your store here
