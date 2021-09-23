@@ -8,7 +8,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 // Array of pizzas
-const pizzaReducer = (state = []], action) => {
+const pizzaReducer = (state = [], action) => {
     if (action.type === 'SET_PIZZA_LIST' ){
         return [...state, action.payload];
     }
