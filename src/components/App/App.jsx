@@ -57,7 +57,7 @@ function App() {
           <Admin />
         </Route>
         <Route path="/api/pizza">
-          <PizzaList />
+          <PizzaList fetchPizzaList={fetchPizzaList}/>
         </Route>
       </Router>
 
