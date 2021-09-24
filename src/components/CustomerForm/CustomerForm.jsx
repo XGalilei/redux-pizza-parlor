@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //import {useHistory} from 'react-router-dom';
 
 function CustomerForm() {
 
     const reduxStore = useSelector(store => store);
+    const dispatch = useDispatch();
 
     //will need to retrieve the customer's order first
     const [name, setName] = useState('');
@@ -13,11 +14,13 @@ function CustomerForm() {
     const [zip, setZip] = useState('');
     //const [type, setType] = useState('');
 
+    //will call this when pushing object to next step
     const moveObject = (object) => {
         const action = {
-            type: 'MOVE_OBJECT_UP',
+            type: 'SET_ORDER_LIST',
             payload: object
         }
+        dispatch(action);
     };
 
     const handleNext = (event) => {
@@ -31,15 +34,20 @@ function CustomerForm() {
             street_address: address,
             city: city,
             zip: zip,
-            type: 'delivery'
+            type: 'delivery',
+            total: 100, //temp: will need to reference this from the previous page
             //type: type 
             // (still unsure how to set this up)
         };
         console.log(orderObject);
+        moveObject(orderObject); 
         //history.push()
+
+        //access the next link in the code
     }
 
     return <div>
+        <p>Step 2: Fill Out Order Information</p>
         <form onSubmit={handleNext}>
             <div>
                 <input

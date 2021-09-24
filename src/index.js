@@ -25,6 +25,12 @@ const orderReducer = (state = [], action) => {
     return state;
 }
 
+const cartReducer = (state = [], action) => {
+    if(action.type === 'SET_PIZZA_ORDERS') {
+        return action.payload;
+    }
+    return state;
+}
 
 
 // Plop in the reducers you want shared through your store here
@@ -32,6 +38,7 @@ const storeInstance = createStore(
     combineReducers({
         pizzaReducer,
         orderReducer,
+        cartReducer,
     }), applyMiddleware(logger)
 )
 

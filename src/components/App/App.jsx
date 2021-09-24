@@ -4,6 +4,8 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Admin from '../Admin/Admin.jsx';
+import CustomerForm from '../CustomerForm/CustomerForm';
+import PizzaList from '../PizzaList/PizzaList';
 
 function App() {
 
