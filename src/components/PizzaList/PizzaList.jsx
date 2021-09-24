@@ -21,7 +21,7 @@ function PizzaList () {
                     <Router>
                         <Link to="/api/order"><button>Next</button></Link>
                             <Route path="/api/order">
-                                {/* <CustomerForm /> */}
+                                <CustomerForm />
                             </Route>
                     </Router>
                 </div>
