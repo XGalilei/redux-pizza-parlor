@@ -28,6 +28,7 @@ function App() {
       console.log(response.data);
       dispatch({
         type: 'CHECKOUT',
+        payload: response.data,
       });
     })
   }

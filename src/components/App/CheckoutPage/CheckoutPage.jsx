@@ -7,7 +7,9 @@ function OrderPage() {
     const dispatch = useDispatch();
 
     const handleCheckout = () => {
-        const action = { type: 'CHECKOUT' };
+        const action = { 
+            type: 'CHECKOUT'
+        };
         dispatch(action);
     }
 
@@ -17,6 +19,7 @@ function OrderPage() {
             <br />
             <h2>Step 3: Checkout</h2>
             <>
+            <h2>{JSON.stringify(reduxStore)}</h2>
             <div>{getCheckout.map(customer => (
                 <ul>
                     <li>customer.customer_name</li>
@@ -41,7 +44,7 @@ function OrderPage() {
                 ))}
                 </table>
                 <br />
-                <h2>Total: {getCheckout.orders.total}</h2>
+                <h2>Total: {getCheckout.total}</h2>
                 <br />
                 <button onClick={handleCheckout}>Checkout</button>
         </>
