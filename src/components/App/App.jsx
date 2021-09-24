@@ -59,7 +59,9 @@ function App() {
         type: 'SET_PIZZA_LIST',
         payload: response.data
       });
-    })
+    }).catch (error => {
+      console.log('error on PIZZA GET', error);
+    });
   }
 
   // GET order list from server
@@ -92,13 +94,17 @@ function App() {
       
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-      <CustomerForm />
+      
       <Router>
         <Route path="/admin">
           <Admin />
         </Route>
         <Route path="/api/pizza">
           <PizzaList fetchPizzaList={fetchPizzaList}/>
+        </Route>
+        <Link to="/api/checkout"></Link>
+        <Route path="/api/order">
+          <CustomerForm />
         </Route>
       </Router>
 

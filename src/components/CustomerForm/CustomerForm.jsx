@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
 //import {useHistory} from 'react-router-dom';
 
 function CustomerForm() {
@@ -42,7 +43,7 @@ function CustomerForm() {
         console.log(orderObject);
         moveObject(orderObject); 
         //history.push()
-
+        
         //access the next link in the code
     }
 
@@ -78,8 +79,11 @@ function CustomerForm() {
                 <input type="radio" id="delivery" name="type" value="delivery" />
                 <label htmlFor="delivery">Delivery</label>
             </div>
-
-            <input type="submit" value="Next" />
+            <Router>
+                <Link to="/api/checkout"><input type="submit" value="Next" /></Link>
+                <Route path="/api/checkout"></Route>
+            </Router>
+            
         </form>
     </div>;
 }
