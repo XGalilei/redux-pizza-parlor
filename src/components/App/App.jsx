@@ -7,12 +7,44 @@ import Admin from '../Admin/Admin.jsx';
 
 function App() {
 
+
+  // Russell's spaghetti Order checkout
+  // const getCheckout = () => {
+  //   axios({
+  //     method: 'GET',
+  //     url: '/api/pizza',
+  //   }).then((response) => {
+  //     dispatch({
+  //       type: 'CHECKOUT_DATA',
+  //       payload: response.data,
+  //     }).catch((err) => {
+  //       console.log(err);
+  //       alert('Something went wrong.');
+  //     })
+  //   })
+  // }
+
+  // // Russell's spaghetti POST for checkout
+  // const postCheckout = () => {
+  //   axios({
+  //     method: 'POST',
+  //     url: '/api/order',
+  //   }).then(response => {
+  //     console.log(response.data);
+  //     dispatch({
+  //       type: 'CHECKOUT',
+  //       payload: response.data,
+  //     });
+  //   })
+  // }
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     fetchPizzaList();
     fetchOrderList();
   },[]);
+
 
   // GET pizza list from server
   const fetchPizzaList = () => {

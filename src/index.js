@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App/App';
 import logger from 'redux-logger';
 
+
 // Redux
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
@@ -39,3 +40,4 @@ ReactDOM.render(
         <App />
     </Provider>, 
 document.getElementById('root'));
+
