@@ -2,6 +2,8 @@ import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 import { useDispatch } from 'react-redux';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import Admin from '../Admin/Admin.jsx';
 
 function App() {
 
@@ -50,6 +52,13 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      <Router>
+        <Route path="/admin">
+          <Admin />
+        </Route>
+      </Router>
+
+
   
     </div>
   );

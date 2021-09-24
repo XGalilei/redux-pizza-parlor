@@ -26,6 +26,9 @@ CREATE TABLE "orders" (
 	"time" TIMESTAMP DEFAULT NOW() NOT NULL
 );
 
+INSERT INTO "orders"("customer_name", "street_address", "city", "zip","type","total", "time")
+VALUES ('Jeff Bridges', '616 North Grant', 'Ames', '50456', 'delivery', '30.10', '');
+
 CREATE TABLE "line_item" (
 	"id" SERIAL PRIMARY KEY,
 	"order_id" INT REFERENCES "orders" ON DELETE CASCADE,
