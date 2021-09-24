@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 // Array of pizzas
 const pizzaReducer = (state = [], action) => {
     if (action.type === 'SET_PIZZA_LIST' ){
-        return [...state, action.payload];
+        return action.payload;
     }
     return state;
 }

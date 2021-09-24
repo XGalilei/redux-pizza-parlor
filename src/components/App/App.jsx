@@ -57,13 +57,11 @@ function App() {
         <Route path="/admin">
           <Admin />
         </Route>
+        <Link to="api/pizza"><button>Order a Pizza!</button></Link>
         <Route path="/api/pizza">
           <PizzaList fetchPizzaList={fetchPizzaList}/>
         </Route>
       </Router>
-
-
-  
     </div>
   );
 }
