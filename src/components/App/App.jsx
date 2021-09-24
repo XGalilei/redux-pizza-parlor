@@ -56,6 +56,9 @@ function App() {
         <Route path="/admin">
           <Admin />
         </Route>
+        <Route path="/api/pizza">
+          <PizzaList />
+        </Route>
       </Router>
 
 
