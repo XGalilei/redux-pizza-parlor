@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App/App';
 import logger from 'redux-logger';
 
+
 // Redux
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
@@ -24,6 +25,12 @@ const orderReducer = (state = [], action) => {
     return state;
 }
 
+const cartReducer = (state = [], action) => {
+    if(action.type === 'SET_PIZZA_ORDERS') {
+        return action.payload;
+    }
+    return state;
+}
 
 
 // Plop in the reducers you want shared through your store here
@@ -31,6 +38,7 @@ const storeInstance = createStore(
     combineReducers({
         pizzaReducer,
         orderReducer,
+        cartReducer,
     }), applyMiddleware(logger)
 )
 
@@ -39,3 +47,4 @@ ReactDOM.render(
         <App />
     </Provider>, 
 document.getElementById('root'));
+
