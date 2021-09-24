@@ -11,7 +11,7 @@ function App() {
       url: '/api/pizza',
     }).then((response) => {
       dispatch({
-        type: 'SET_CHECKOUT',
+        type: 'CHECKOUT_DATA',
         payload: response.data,
       }).catch((err) => {
         console.log(err);
