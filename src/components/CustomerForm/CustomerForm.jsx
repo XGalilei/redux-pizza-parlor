@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useHistory} from 'react-router-dom';
 
 function CustomerForm() {   
 
@@ -15,7 +16,7 @@ function CustomerForm() {
 
         // TO-DO: Add-in code to handle next step
         // will need to add to the existing order object, 
-        console.log({
+        const orderObject = {
             name: name,
             address: address,
             city: city,
@@ -23,7 +24,9 @@ function CustomerForm() {
             type: 'delivery'
             //type: type 
             // (still unsure how to set this up)
-        });
+        };
+        console.log(orderObject);
+        //history.push()
     }
 
     return <div>
