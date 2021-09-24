@@ -1,10 +1,42 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
-import CustomerForm from '../CustomerForm/CustomerForm';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import Admin from '../Admin/Admin.jsx';
 
 function App() {
+
+
+  // Russell's spaghetti Order checkout
+  // const getCheckout = () => {
+  //   axios({
+  //     method: 'GET',
+  //     url: '/api/pizza',
+  //   }).then((response) => {
+  //     dispatch({
+  //       type: 'CHECKOUT_DATA',
+  //       payload: response.data,
+  //     }).catch((err) => {
+  //       console.log(err);
+  //       alert('Something went wrong.');
+  //     })
+  //   })
+  // }
+
+  // // Russell's spaghetti POST for checkout
+  // const postCheckout = () => {
+  //   axios({
+  //     method: 'POST',
+  //     url: '/api/order',
+  //   }).then(response => {
+  //     console.log(response.data);
+  //     dispatch({
+  //       type: 'CHECKOUT',
+  //       payload: response.data,
+  //     });
+  //   })
+  // }
 
   const dispatch = useDispatch();
 
@@ -12,6 +44,7 @@ function App() {
     fetchPizzaList();
     fetchOrderList();
   },[]);
+
 
   // GET pizza list from server
   const fetchPizzaList = () => {
@@ -58,6 +91,17 @@ function App() {
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
       <CustomerForm />
+      <Router>
+        <Route path="/admin">
+          <Admin />
+        </Route>
+        <Route path="/api/pizza">
+          <PizzaList fetchPizzaList={fetchPizzaList}/>
+        </Route>
+      </Router>
+
+
+  
     </div>
   );
 }
