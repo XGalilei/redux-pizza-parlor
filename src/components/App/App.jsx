@@ -4,6 +4,8 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Admin from '../Admin/Admin.jsx';
+import PizzaList from '../PizzaList/PizzaList';
+import CheckoutPage from '../CheckoutPage/CheckoutPage';
 
 function App() {
 
@@ -90,6 +92,9 @@ function App() {
         </Route>
         <Route path="/api/pizza">
           <PizzaList fetchPizzaList={fetchPizzaList}/>
+        </Route>
+        <Route path="/CheckoutPage">
+          <CheckoutPage />
         </Route>
       </Router>
 
